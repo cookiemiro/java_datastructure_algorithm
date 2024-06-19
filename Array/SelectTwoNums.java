@@ -8,11 +8,8 @@ public class SelectTwoNums {
         int[] arr = new int[] {2, 1, 3, 4, 1};
         int[] arr2 = {5, 0, 2, 7};
 
-        Arrays.sort(solution(arr));
-        Arrays.sort(solution(arr2));
-
-        System.out.println(Arrays.toString(arr));
-        System.out.println(Arrays.toString(arr2));
+        System.out.println(Arrays.toString(solution(arr)));
+        System.out.println(Arrays.toString(solution(arr2)));
     }
 
     private static int[] solution(int[] arr) {
@@ -33,8 +30,12 @@ public class SelectTwoNums {
         // System.out.println(list.stream().mapToInt(i -> i));
         // System.out.println(list.stream().mapToInt(i -> i).toString());
 
+        int [] newArr = list.stream().mapToInt(i -> i).toArray();
+
+        Arrays.sort(newArr);
+
         // ArrayList를 int[]로 변환하는 방법
         // https://hoehen-flug.tistory.com/49
-        return list.stream().mapToInt(i -> i).toArray();
+        return newArr;
     }
 }
